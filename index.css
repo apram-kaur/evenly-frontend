@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #FFFAF2; /* coconut cream */
+  color: #818263; /* savory sage */
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: #818263;
+}
