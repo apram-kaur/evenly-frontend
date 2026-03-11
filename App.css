@@ -4,7 +4,7 @@ body {
   background-color: #FFFAF2; /* coconut cream */
 }
 
-.container {
+.container {  
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -40,5 +40,5 @@ body {
 }
 
 .button:hover {
-  background-color: #818263;
+  background-color: #818263; /* gradient bg */
 }
