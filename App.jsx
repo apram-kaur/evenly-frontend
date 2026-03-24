@@ -1,14 +1,23 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import GroupPage from "./pages/GroupPage";
+import Landing from "./pages/Landing";
+import Auth from "./pages/Auth";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div className="container">
-      <div className="hero">
-        <h1 className="logo">Evenly</h1>
-        <p className="tagline">Split expenses. Stay friends.</p>
-        <button className="button">Get Started</button>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/auth" element={<Auth />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

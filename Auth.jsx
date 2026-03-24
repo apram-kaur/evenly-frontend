@@ -9,8 +9,8 @@ function Auth() {
     <div className="container">
       <div className="hero">
 
-        <h2 style={{color:"#818263"}}>Welcome to Evenly</h2>
-        <p className="tagline">Split expenses. Stay friends.</p>
+        <h2 style={{ color: "#818263" }}>Welcome to Evenly</h2>
+        <p className="tagline">Choose an option to continue</p>
 
         <button
           className="button"
@@ -19,11 +19,9 @@ function Auth() {
           Login
         </button>
 
-        <br />
-
         <button
           className="button"
-          style={{marginTop:"15px"}}
+          style={{ marginLeft: "15px" }}
           onClick={() => navigate("/register")}
         >
           Register

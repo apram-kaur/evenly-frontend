@@ -1,10 +1,28 @@
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #FFFAF2; /* coconut cream */
+  background: linear-gradient(
+    135deg,
+    #f0e6d6,
+    #e9dbc9,
+    #e3d3bf
+  );
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
 }
 
-.container {  
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.container {
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -17,7 +35,7 @@ body {
 
 .logo {
   font-family: 'Pacifico', cursive;
-  font-size: 70px;
+  font-size: 72px;
   color: #818263; /* savory sage */
 }
 
@@ -29,16 +47,320 @@ body {
 
 .button {
   margin-top: 30px;
-  padding: 12px 28px;
-  border-radius: 10px;
+  padding: 12px 30px;
+  border-radius: 12px;
   border: none;
-  background-color: #C2C395; /* avocado smoothie */
+  background-color: #818263; /* savory sage */
   color: white;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.2s;
+
+  transition: all 0.25s ease;
+
+  /* soft modern shadow */
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 .button:hover {
-  background-color: #818263; /* gradient bg */
+  transform: translateY(-3px);
+  background-color: #C2C395; /* avocado smoothie */
+}
+.auth-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  background: #F4F4F4;
+  padding: 50px;
+  border-radius: 20px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.auth-title {
+  color: #818263;
+  margin-bottom: 30px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.auth-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background-color: #818263;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-button:hover {
+  background-color: #6d6e54;
+}
+.dashboard {
+  padding: 40px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h2 {
+  color: #818263;
+}
+
+.logout-btn {
+  background: #818263;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #F4F4F4;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.primary-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #818263;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+.dashboard {
+  padding: 40px 80px;
+}
+
+/* header */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 70px;
+  font-weight: bold;
+  color: #7b7f5c;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.logout-btn {
+  background: #818263;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #6d6e54;
+}
+
+/* grid layout */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* cards */
+
+.dashboard-card {
+  background: #F4F4F4;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.dashboard-card h3 {
+  color: #818263;
+  margin-bottom: 15px;
+}
+
+/* buttons */
+
+.primary-btn {
+  margin-top: 18px;
+  padding: 12px 22px;
+  background: #818263;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn:hover {
+  background: #6d6e54;
+  transform: scale(1.05);
+}
+
+
+.balance {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.dashboard-card {
+  background: #F4F4F4;
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+.floating-icons span {
+  position: absolute;
+  font-size: 30px;
+  opacity: 0.4;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-icons span:nth-child(1) { top: 20%; left: 15%; }
+.floating-icons span:nth-child(2) { top: 70%; left: 25%; }
+.floating-icons span:nth-child(3) { top: 30%; right: 20%; }
+.floating-icons span:nth-child(4) { bottom: 20%; right: 25%; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+.error-message {
+  color: #e63946;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.success-message {
+  color: #2a9d8f;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+}
+
+.danger-btn {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.secondary-btn {
+  background: #ccc;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 8px;
+}
+.success-message {
+  margin-top: 10px;
+  color: #4CAF50;
+  font-weight: 500;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(5px); }
+  20% { opacity: 1; transform: translateY(0); }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+
+  animation: slideInOut 2s ease forwards;
+}
+
+/* animation */
+@keyframes slideInOut {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
