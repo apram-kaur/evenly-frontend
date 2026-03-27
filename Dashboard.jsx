@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"; // ✅ ADD THIS
+import { useNavigate } from "react-router-dom";
 import { createGroup, getGroups, deleteGroup } from "../api/groups";
 import "../App.css";
 
 function Dashboard() {
-
-  const navigate = useNavigate(); // ✅ ADD THIS
+  const navigate = useNavigate();
 
   const [showForm, setShowForm] = useState(false);
   const [groupName, setGroupName] = useState("");
@@ -48,7 +47,6 @@ function Dashboard() {
 
       setGroupName("");
       setShowForm(false);
-
     } catch (err) {
       console.log(err);
 
@@ -68,8 +66,10 @@ function Dashboard() {
         prev.filter((g) => g._id !== selectedGroup._id)
       );
 
-      setSelectedGroup(null);
+      setToast("Group deleted 🗑️");
+      setTimeout(() => setToast(""), 2000);
 
+      setSelectedGroup(null);
     } catch (err) {
       console.log(err);
       alert("Failed to delete group");
@@ -80,11 +80,7 @@ function Dashboard() {
     <div className="dashboard">
 
       {/* ✅ TOAST */}
-      {toast && (
-        <div className="toast">
-          {toast}
-        </div>
-      )}
+      {toast && <div className="toast">{toast}</div>}
 
       {/* HEADER */}
       <div className="dashboard-header">
@@ -103,7 +99,7 @@ function Dashboard() {
             groups.map((group, index) => (
               <p
                 key={group._id || index}
-                onClick={() => navigate(`/group/${group._id}`)} // ✅ FIXED
+                onClick={() => setSelectedGroup(group)} // ✅ FIXED
                 style={{ cursor: "pointer" }}
               >
                 {group.name}
@@ -156,12 +152,21 @@ function Dashboard() {
 
       </div>
 
-      {/* MODAL (optional - can remove later) */}
+      {/* ✅ MODAL */}
       {selectedGroup && (
         <div className="modal-overlay">
           <div className="modal">
 
             <h2>{selectedGroup.name}</h2>
+
+            <button
+              className="primary-btn"
+              onClick={() =>
+             navigate(`/group/${group._id}`, { state: { group } })
+            }
+            >
+              Go to Group
+            </button>
 
             <button
               className="danger-btn"
